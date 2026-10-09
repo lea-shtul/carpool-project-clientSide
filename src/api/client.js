@@ -8,7 +8,7 @@ import { toApiError } from './errors'
  * ASP.NET Core backend — no CORS setup needed in dev.
  */
 export const apiClient = axios.create({
-  baseURL: '/api',
+   baseURL: `${import.meta.env.VITE_API_BASE_URL ?? ''}/api`,
 })
 
 apiClient.interceptors.request.use((config) => {
