@@ -13,7 +13,7 @@ export function getBooking(id) {
 }
 
 export function cancelBooking(id) {
-  return apiClient.patch(`/bookings/${id}/cancel`).then((r) => r.data)
+  return apiClient.delete(`/bookings/${id}`)
 }
 
 /** Driver-only (or Admin): every booking on a ride, passenger names included. Spec extension. */

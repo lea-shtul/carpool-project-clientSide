@@ -35,9 +35,9 @@ export function createRide(payload) {
 }
 
 export function cancelRide(id) {
-  return apiClient.patch(`/rides/${id}/cancel`).then((r) => r.data)
+  return apiClient.patch(`/rides/${id}`, { status: 'Cancelled' }).then((r) => r.data)
 }
 
 export function completeRide(id) {
-  return apiClient.patch(`/rides/${id}/complete`).then((r) => r.data)
+  return apiClient.patch(`/rides/${id}`, { status: 'Completed' }).then((r) => r.data)
 }
